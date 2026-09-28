@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>東 基済 | Film Director | ALOPEX production</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #fff;
+    font-family:
+        "Helvetica Neue",
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        Arial,
+        sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo img {
+    width: 180px;
+    height: auto;
+}
+
+.back {
+    font-size: 9px;
+    letter-spacing: 3px;
+    opacity: .65;
+    transition: opacity .3s;
+}
+
+.back:hover {
+    opacity: 1;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    overflow: hidden;
+    background: #080808;
+}
+
+.hero-left {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 150px 7% 90px 9%;
+}
+
+.hero-number {
+    font-size: 9px;
+    letter-spacing: 5px;
+    opacity: .4;
+    margin-bottom: 35px;
+}
+
+.hero h1 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+    font-size: clamp(58px, 8vw, 115px);
+    font-weight: 400;
+    line-height: .95;
+    letter-spacing: 4px;
+}
+
+.hero-en {
+    margin-top: 25px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(18px, 2vw, 28px);
+    letter-spacing: 7px;
+    opacity: .65;
+}
+
+.hero-role {
+    margin-top: 55px;
+    font-size: 9px;
+    line-height: 2.2;
+    letter-spacing: 4px;
+    opacity: .5;
+}
+
+.hero-line {
+    width: 55px;
+    height: 1px;
+    background: #fff;
+    opacity: .4;
+    margin-top: 45px;
+}
+
+.hero-image {
+    position: relative;
+    min-height: 100vh;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            #080808 0%,
+            rgba(8,8,8,.25) 35%,
+            rgba(8,8,8,.05) 100%
+        );
+}
+
+.scroll {
+    position: absolute;
+    z-index: 5;
+    bottom: 32px;
+    left: 9%;
+    font-size: 8px;
+    letter-spacing: 4px;
+    opacity: .35;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    position: relative;
+    padding: 170px 9%;
+    background:
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(38,58,115,.28),
+            transparent 35%
+        ),
+        #080808;
+}
+
+.section-label {
+    font-size: 9px;
+    letter-spacing: 6px;
+    opacity: .4;
+    margin-bottom: 45px;
+}
+
+.intro-copy {
+    max-width: 950px;
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+    font-size: clamp(34px, 5vw, 70px);
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.intro-copy span {
+    opacity: .38;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile {
+    padding: 150px 9%;
+    background: #0b0b0b;
+}
+
+.profile-inner {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: .75fr 1.25fr;
+    gap: 100px;
+}
+
+.profile-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.profile-jp {
+    margin-top: 15px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    opacity: .4;
+}
+
+.profile-text {
+    font-size: 14px;
+    line-height: 2.5;
+    letter-spacing: 1px;
+    opacity: .72;
+}
+
+.profile-data {
+    margin-top: 55px;
+    border-top: 1px solid rgba(255,255,255,.16);
+}
+
+.data-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.data-label {
+    font-size: 8px;
+    letter-spacing: 3px;
+    opacity: .35;
+}
+
+.data-value {
+    font-size: 11px;
+    letter-spacing: 1px;
+    opacity: .65;
+}
+
+
+/* =========================
+   CAREER
+========================= */
+
+.career {
+    padding: 160px 9%;
+    background: #080808;
+}
+
+.career-inner {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.career h2,
+.works h2,
+.statement h2 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 400;
+    margin-bottom: 75px;
+}
+
+.career-list {
+    border-top: 1px solid rgba(255,255,255,.18);
+}
+
+.career-item {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    padding: 35px 0;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.career-year {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    opacity: .35;
+}
+
+.career-content h3 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.career-content p {
+    max-width: 720px;
+    font-size: 12px;
+    line-height: 2;
+    opacity: .5;
+}
+
+
+/* =========================
+   SELECTED WORKS
+========================= */
+
+.works {
+    padding: 160px 9%;
+    background: #0b0b0b;
+}
+
+.works-inner {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.work-list {
+    border-top: 1px solid rgba(255,255,255,.18);
+}
+
+.work {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.work-number {
+    font-size: 8px;
+    letter-spacing: 3px;
+    opacity: .3;
+}
+
+.work-name {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+    font-size: clamp(19px, 2vw, 27px);
+    font-weight: 400;
+}
+
+.work-type {
+    font-size: 8px;
+    letter-spacing: 3px;
+    opacity: .35;
+}
+
+
+/* =========================
+   STATEMENT
+========================= */
+
+.statement {
+    position: relative;
+    padding: 180px 9%;
+    background:
+        radial-gradient(
+            circle at 20% 60%,
+            rgba(38,58,115,.35),
+            transparent 35%
+        ),
+        #080808;
+}
+
+.statement-inner {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.statement h2 {
+    margin-bottom: 55px;
+}
+
+.statement-main {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+    font-size: clamp(25px, 3.5vw, 43px);
+    line-height: 1.8;
+    letter-spacing: 2px;
+}
+
+.statement-text {
+    max-width: 700px;
+    margin-top: 55px;
+    font-size: 13px;
+    line-height: 2.4;
+    letter-spacing: 1px;
+    opacity: .58;
+}
+
+.signature {
+    margin-top: 60px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    opacity: .4;
+}
+
+
+/* =========================
+   ALOPEX
+========================= */
+
+.alopex {
+    padding: 150px 9%;
+    background: #0b0b0b;
+}
+
+.alopex-inner {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.alopex-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 7vw, 90px);
+    font-weight: 400;
+    letter-spacing: -2px;
+}
+
+.alopex-title span {
+    display: block;
+    font-size: .22em;
+    letter-spacing: 10px;
+    margin-top: 15px;
+    opacity: .5;
+}
+
+.alopex-text {
+    max-width: 650px;
+    margin-top: 55px;
+    font-size: 13px;
+    line-height: 2.3;
+    opacity: .55;
+}
+
+
+/* =========================
+   CONTACT / FOOTER
+========================= */
+
+.contact {
+    padding: 160px 9% 70px;
+    background: #080808;
+}
+
+.contact-inner {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.contact-title {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+    font-size: clamp(45px, 7vw, 90px);
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.contact-link {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0;
+    border-top: 1px solid rgba(255,255,255,.2);
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+.contact-link span {
+    font-size: 22px;
+}
+
+footer {
+    max-width: 1250px;
+    margin: 100px auto 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    font-size: 8px;
+    line-height: 2;
+    letter-spacing: 2px;
+    opacity: .3;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+    header {
+        padding: 22px 6%;
+    }
+
+    .logo img {
+        width: 135px;
+    }
+
+    .back {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .hero {
+        display: block;
+        min-height: 100svh;
+    }
+
+    .hero-image {
+        position: absolute;
+        inset: 0;
+        min-height: 100%;
+    }
+
+    .hero-image img {
+        object-position: center center;
+    }
+
+    .hero-image::after {
+        background:
+            linear-gradient(
+                0deg,
+                rgba(8,8,8,.95) 5%,
+                rgba(8,8,8,.25) 60%,
+                rgba(8,8,8,.2) 100%
+            );
+    }
+
+    .hero-left {
+        min-height: 100svh;
+        justify-content: flex-end;
+        padding: 130px 7% 105px;
+    }
+
+    .hero-number {
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+        letter-spacing: 2px;
+    }
+
+    .hero-en {
+        font-size: 17px;
+        letter-spacing: 4px;
+    }
+
+    .hero-role {
+        margin-top: 30px;
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .scroll {
+        left: 7%;
+        bottom: 28px;
+    }
+
+    .intro {
+        padding: 110px 7%;
+    }
+
+    .intro-copy {
+        font-size: 35px;
+    }
+
+    .profile,
+    .career,
+    .works,
+    .statement,
+    .alopex,
+    .contact {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .profile {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+    .profile-inner {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .profile-title {
+        font-size: 35px;
+    }
+
+    .profile-text {
+        font-size: 13px;
+        line-height: 2.3;
+    }
+
+    .data-row {
+        grid-template-columns: 110px 1fr;
+    }
+
+    .career,
+    .works {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+    .career h2,
+    .works h2,
+    .statement h2 {
+        font-size: 43px;
+        margin-bottom: 55px;
+    }
+
+    .career-item {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 28px 0;
+    }
+
+    .work {
+        grid-template-columns: 45px 1fr;
+        gap: 10px;
+    }
+
+    .work-type {
+        display: none;
+    }
+
+    .statement {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .statement-main {
+        font-size: 27px;
+    }
+
+    .statement-text {
+        font-size: 12px;
+    }
+
+    .alopex {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+    .alopex-title {
+        font-size: 48px;
+    }
+
+    .contact {
+        padding-top: 110px;
+        padding-bottom: 55px;
+    }
+
+    .contact-title {
+        font-size: 42px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 80px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <a href="index.html" class="logo">
+        <img src="alopex-logo.PNG" alt="ALOPEX production">
+    </a>
+
+    <a href="index.html" class="back">
+        ← BACK TO HOME
+    </a>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <p class="hero-number">
+            DIRECTOR / 01
+        </p>
+
+        <h1>
+            東 基済
+        </h1>
+
+        <p class="hero-en">
+            MOTOZUMI AZUMA
+        </p>
+
+        <div class="hero-line"></div>
+
+        <p class="hero-role">
+            FILM DIRECTOR / SCREENWRITER / PRODUCER<br>
+            FOUNDER OF ALOPEX PRODUCTION
+        </p>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="IMG_8155.JPG" alt="東基済">
+    </div>
+
+    <p class="scroll">
+        SCROLL TO EXPLORE ↓
+    </p>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+    <p class="section-label">
+        PHILOSOPHY
+    </p>
+
+    <p class="intro-copy">
+        人を撮る。<br>
+        感情を撮る。<br>
+        <span>そして、記憶に残る物語を。</span>
+    </p>
+
+</section>
+
+
+<!-- PROFILE -->
+
+<section class="profile">
+
+    <div class="profile-inner">
+
+        <div>
+
+            <p class="section-label">
+                PROFILE
+            </p>
+
+            <h2 class="profile-title">
+                MOTOZUMI<br>
+                AZUMA
+            </h2>
+
+            <p class="profile-jp">
+                東 基済
+            </p>
+
+        </div>
+
+        <div>
+
+            <p class="profile-text">
+                1990年兵庫県生まれ。<br>
+                映画監督・脚本家・映像クリエイター。
+                ALOPEX production代表。
+                <br><br>
+                音楽活動を経て映像制作の世界へ。
+                短編から長編まで数多くの映像作品を手掛け、
+                監督・脚本・撮影・編集など、
+                映像制作の各工程に携わる。
+                <br><br>
+                人間の感情や記憶、言葉にならない心の揺れを
+                映像として描くことを大切にしながら、
+                映画・ドラマ・企業PRなどジャンルを問わず
+                作品制作を続けている。
+            </p>
+
+            <div class="profile-data">
+
+                <div class="data-row">
+                    <p class="data-label">NAME</p>
+                    <p class="data-value">東 基済 / MOTOZUMI AZUMA</p>
+                </div>
+
+                <div class="data-row">
+                    <p class="data-label">BORN</p>
+                    <p class="data-value">1990 / HYOGO, JAPAN</p>
+                </div>
+
+                <div class="data-row">
+                    <p class="data-label">FIELD</p>
+                    <p class="data-value">
+                        FILM / DRAMA / COMMERCIAL / CREATIVE
+                    </p>
+                </div>
+
+                <div class="data-row">
+                    <p class="data-label">POSITION</p>
+                    <p class="data-value">
+                        DIRECTOR / SCREENWRITER / PRODUCER
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CAREER -->
+
+<section class="career">
+
+    <div class="career-inner">
+
+        <p class="section-label">
+            CAREER
+        </p>
+
+        <h2>
+            経歴
+        </h2>
+
+        <div class="career-list">
+
+            <div class="career-item">
+
+                <p class="career-year">
+                    ORIGIN
+                </p>
+
+                <div class="career-content">
+                    <h3>音楽から、映像へ。</h3>
+                    <p>
+                        幼少期から音楽に触れ、
+                        ギター・ドラムなどの演奏活動を経験。
+                        音楽活動を経て、表現の舞台を映像へと広げる。
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="career-item">
+
+                <p class="career-year">
+                    FILM
+                </p>
+
+                <div class="career-content">
+                    <h3>映画制作</h3>
+                    <p>
+                        自主映画を中心に短編・中編・長編作品を制作。
+                        監督・脚本だけでなく撮影や編集にも携わり、
+                        一貫した映像表現を追求している。
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="career-item">
+
+                <p class="career-year">
+                    ALOPEX
+                </p>
+
+                <div class="career-content">
+                    <h3>ALOPEX production</h3>
+                    <p>
+                        俳優マネジメントと映像制作を行う
+                        ALOPEX productionを運営。
+                        映画制作と俳優育成の両面から、
+                        新たな作品と表現者を生み出している。
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="career-item">
+
+                <p class="career-year">
+                    NOW
+                </p>
+
+                <div class="career-content">
+                    <h3>映画から企業映像まで。</h3>
+                    <p>
+                        映画・ドラマ制作に加え、
+                        企業PR、ブランド映像、SNSコンテンツなど
+                        映像表現の領域を広げている。
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WORKS -->
+
+<section class="works">
+
+    <div class="works-inner">
+
+        <p class="section-label">
+            SELECTED FILMOGRAPHY
+        </p>
+
+        <h2>
+            代表作品
+        </h2>
+
+        <div class="work-list">
+
+            <div class="work">
+                <p class="work-number">01</p>
+                <p class="work-name">音の雫</p>
+                <p class="work-type">FEATURE FILM</p>
+            </div>
+
+            <div class="work">
+                <p class="work-number">02</p>
+                <p class="work-name">ヒナゲシが咲いた場所</p>
+                <p class="work-type">FEATURE FILM</p>
+            </div>
+
+            <div class="work">
+                <p class="work-number">03</p>
+                <p class="work-name">日向夏</p>
+                <p class="work-type">FEATURE FILM</p>
+            </div>
+
+            <div class="work">
+                <p class="work-number">04</p>
+                <p class="work-name">ここが私の世界隅。</p>
+                <p class="work-type">FEATURE FILM</p>
+            </div>
+
+            <div class="work">
+                <p class="work-number">05</p>
+                <p class="work-name">並行感情理論</p>
+                <p class="work-type">SHORT FILM</p>
+            </div>
+
+            <div class="work">
+                <p class="work-number">06</p>
+                <p class="work-name">右か左か。</p>
+                <p class="work-type">SHORT FILM</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DIRECTOR'S STATEMENT -->
+
+<section class="statement">
+
+    <div class="statement-inner">
+
+        <p class="section-label">
+            DIRECTOR'S STATEMENT
+        </p>
+
+        <h2>
+            映画について。
+        </h2>
+
+        <p class="statement-main">
+            人の心は、<br>
+            言葉になった瞬間よりも、<br>
+            言葉になる直前が<br>
+            一番美しいと思う。
+        </p>
+
+        <p class="statement-text">
+            映画の中で描きたいのは、
+            大きな出来事だけではありません。
+            <br><br>
+            誰かを見る一瞬の目線や、
+            言えなかった一言、
+            何でもない景色が突然忘れられなくなる瞬間。
+            <br><br>
+            そんな、人の記憶の中にだけ残っていくものを、
+            映像として残したいと思っています。
+        </p>
+
+        <p class="signature">
+            MOTOZUMI AZUMA
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ALOPEX -->
+
+<section class="alopex">
+
+    <div class="alopex-inner">
+
+        <p class="section-label">
+            PRODUCTION
+        </p>
+
+        <h2 class="alopex-title">
+            ALOPEX
+            <span>PRODUCTION</span>
+        </h2>
+
+        <p class="alopex-text">
+            関西を拠点に、
+            俳優マネジメントと映像制作を行う
+            クリエイティブプロダクション。
+            <br><br>
+            映画制作で培った演出力を軸に、
+            映画・ドラマ・PR映像・SNSコンテンツまで、
+            人と物語の魅力を映像として形にしています。
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+    <div class="contact-inner">
+
+        <p class="section-label">
+            CONTACT
+        </p>
+
+        <h2 class="contact-title">
+            まだ見たことのない<br>
+            物語を、一緒に。
+        </h2>
+
+        <a
+            href="mailto:azumamotozumi0303@gmail.com"
+            class="contact-link">
+            CONTACT
+            <span>→</span>
+        </a>
+
+
+        <footer>
+
+            <p>
+                MOTOZUMI AZUMA
+            </p>
+
+            <p>
+                FILM DIRECTOR / ALOPEX PRODUCTION
+            </p>
+
+            <p>
+                © ALOPEX production
+            </p>
+
+        </footer>
+
+    </div>
+
+</section>
+
+
+</body>
+</html>
