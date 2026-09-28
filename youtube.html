@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YouTube Programs | ALOPEX production</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #050505;
+}
+
+body {
+    background: #050505;
+    color: #fff;
+    font-family: Arial, "Helvetica Neue", "Hiragino Kaku Gothic ProN",
+                 "Yu Gothic", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    padding: 35px 6%;
+    border-bottom: 1px solid #222;
+}
+
+.back {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 3px;
+    transition: .3s;
+}
+
+.back:hover {
+    color: #fff;
+}
+
+/* HERO */
+
+.hero {
+    padding: 120px 8% 100px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.label {
+    font-size: 10px;
+    letter-spacing: 6px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 110px);
+    font-weight: 400;
+    line-height: .95;
+    letter-spacing: -3px;
+}
+
+.hero-text {
+    margin-top: 45px;
+    color: #888;
+    font-size: 13px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+/* PROGRAM */
+
+.program {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 8% 140px;
+}
+
+.program-number {
+    font-size: 9px;
+    letter-spacing: 5px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 420px) 1fr;
+    gap: 9%;
+    align-items: center;
+    border-top: 1px solid #333;
+    padding-top: 70px;
+}
+
+.poster {
+    width: 100%;
+    display: block;
+}
+
+.program-info .category {
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.program-info h2 {
+    font-size: clamp(32px, 5vw, 60px);
+    font-weight: 400;
+    line-height: 1.35;
+    margin-bottom: 35px;
+}
+
+.description {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 2.2;
+    margin-bottom: 50px;
+}
+
+.latest {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 25px 0;
+    margin-bottom: 40px;
+}
+
+.latest-label {
+    font-size: 8px;
+    letter-spacing: 4px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.latest-title {
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+/* BUTTON */
+
+.watch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid #555;
+    padding: 20px 0;
+    font-size: 10px;
+    letter-spacing: 4px;
+    transition: .3s;
+}
+
+.watch:hover {
+    border-color: #fff;
+}
+
+.arrow {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+/* FOOTER */
+
+.footer {
+    border-top: 1px solid #222;
+    padding: 50px 8%;
+    color: #555;
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    .header {
+        padding: 28px 7%;
+    }
+
+    .hero {
+        padding: 90px 7% 80px;
+    }
+
+    .label {
+        font-size: 8px;
+        letter-spacing: 4px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+        letter-spacing: -2px;
+    }
+
+    .hero-text {
+        font-size: 12px;
+        margin-top: 35px;
+    }
+
+    .program {
+        padding: 10px 7% 100px;
+    }
+
+    .program-grid {
+        display: block;
+        padding-top: 45px;
+    }
+
+    .poster {
+        width: 100%;
+        margin-bottom: 55px;
+    }
+
+    .program-info h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    .description {
+        font-size: 12px;
+        margin-bottom: 40px;
+    }
+
+    .latest-title {
+        font-size: 13px;
+    }
+
+    .footer {
+        padding: 40px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <a href="index.html" class="back">← BACK TO HOME</a>
+</header>
+
+<section class="hero">
+
+    <p class="label">ALOPEX ORIGINAL CONTENTS</p>
+
+    <h1>
+        YouTube<br>
+        Programs
+    </h1>
+
+    <p class="hero-text">
+        ALOPEX productionが制作する<br>
+        オリジナルYouTubeコンテンツ。
+    </p>
+
+</section>
+
+
+<section class="program">
+
+    <p class="program-number">PROGRAM 01</p>
+
+    <div class="program-grid">
+
+        <div>
+            <img src="imakoto.JPG"
+                 alt="イマだから話せるコト。"
+                 class="poster">
+        </div>
+
+        <div class="program-info">
+
+            <p class="category">
+                TALK PROGRAM / ACTORS
+            </p>
+
+            <h2>
+                イマだから<br>
+                話せるコト。
+            </h2>
+
+            <p class="description">
+                カメラが回っているのに、女子会は止まらない。<br><br>
+
+                俳優×俳優だからこそ話せる、
+                仕事や恋愛、リアルな悩み。<br>
+
+                俳優たちの「今」に迫る
+                ALOPEX productionオリジナルトーク番組。
+            </p>
+
+            <div class="latest">
+
+                <p class="latest-label">
+                    LATEST EPISODE
+                </p>
+
+                <p class="latest-title">
+                    Vol.8<br>
+                    ゲスト：俳優「森下りお」さん
+                </p>
+
+            </div>
+
+            <a href="#" class="watch">
+                <span>WATCH ON YOUTUBE</span>
+                <span class="arrow">→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="footer">
+    © ALOPEX production
+</footer>
+
+</body>
+</html>
