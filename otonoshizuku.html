@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>音の雫 | ALOPEX production</title>
+
+<style>
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background: #080808;
+    color: #ffffff;
+    font-family:
+        "Helvetica Neue",
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        Arial,
+        sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo img {
+    display: block;
+    width: 190px;
+    height: auto;
+}
+
+.back-link {
+    font-size: 9px;
+    letter-spacing: 3px;
+    opacity: .6;
+    transition: opacity .3s ease;
+}
+
+.back-link:hover {
+    opacity: 1;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.movie-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    align-items: center;
+
+    gap: 8%;
+
+    padding: 130px 8% 100px;
+
+    background:
+        radial-gradient(
+            circle at 75% 35%,
+            rgba(38, 58, 115, .7) 0%,
+            rgba(16, 23, 42, .55) 25%,
+            #080808 65%
+        );
+}
+
+
+/* POSTER */
+
+.movie-poster {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+}
+
+.movie-poster img {
+    display: block;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 30px 80px rgba(0,0,0,.55);
+}
+
+
+/* HERO TEXT */
+
+.movie-number {
+    font-size: 9px;
+    letter-spacing: 5px;
+    opacity: .45;
+    margin-bottom: 25px;
+}
+
+.movie-title {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: clamp(55px, 8vw, 110px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 3px;
+}
+
+.movie-type {
+    margin-top: 24px;
+    font-size: 9px;
+    letter-spacing: 5px;
+    opacity: .45;
+}
+
+.movie-line {
+    width: 60px;
+    height: 1px;
+    background: #fff;
+    opacity: .4;
+    margin: 40px 0;
+}
+
+.movie-credit {
+    font-size: 11px;
+    line-height: 2.2;
+    letter-spacing: 2px;
+    opacity: .6;
+}
+
+
+/* ========================================
+   STORY
+======================================== */
+
+.story {
+    padding: 160px 8%;
+    background: #0b0b0b;
+}
+
+.story-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-label {
+    font-size: 9px;
+    letter-spacing: 6px;
+    opacity: .4;
+    margin-bottom: 30px;
+}
+
+.story h2,
+.trailer h2 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: clamp(42px, 5vw, 70px);
+    font-weight: 400;
+    margin-bottom: 60px;
+}
+
+.story-text {
+    max-width: 760px;
+
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+
+    font-size: 15px;
+    line-height: 2.6;
+    letter-spacing: 1.5px;
+    opacity: .75;
+}
+
+
+/* ========================================
+   TRAILER
+======================================== */
+
+.trailer {
+    padding: 150px 8% 180px;
+    background: #080808;
+}
+
+.trailer-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trailer-video {
+    position: relative;
+    width: 100%;
+    background: #000;
+    overflow: hidden;
+}
+
+.trailer-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* ========================================
+   NEXT
+======================================== */
+
+.next-section {
+    padding: 100px 8%;
+    border-top: 1px solid rgba(255,255,255,.1);
+    text-align: center;
+}
+
+.next-section p {
+    font-size: 9px;
+    letter-spacing: 5px;
+    opacity: .35;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 750px) {
+
+    header {
+        padding:
+            calc(22px + env(safe-area-inset-top))
+            6%
+            20px;
+    }
+
+    .logo img {
+        width: 140px;
+    }
+
+    .back-link {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+
+    /* HERO */
+
+    .movie-hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 55px;
+
+        padding:
+            calc(120px + env(safe-area-inset-top))
+            7%
+            100px;
+    }
+
+    .movie-poster {
+        max-width: 330px;
+    }
+
+    .movie-title {
+        font-size: 58px;
+    }
+
+    .movie-credit {
+        font-size: 10px;
+    }
+
+
+    /* STORY */
+
+    .story {
+        padding: 110px 7%;
+    }
+
+    .story h2,
+    .trailer h2 {
+        font-size: 45px;
+        margin-bottom: 45px;
+    }
+
+    .story-text {
+        font-size: 13px;
+        line-height: 2.4;
+    }
+
+
+    /* TRAILER */
+
+    .trailer {
+        padding: 110px 6% 130px;
+    }
+
+}
+
+/* ========================================
+   CREDITS
+======================================== */
+
+.credits {
+    background: #080808;
+    padding: 160px 8% 120px;
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.credits-inner {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.credits h2 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: clamp(42px, 5vw, 70px);
+    font-weight: 400;
+    margin-bottom: 100px;
+}
+
+.credit-block {
+    padding: 55px 0;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.credit-label {
+    font-size: 8px;
+    letter-spacing: 5px;
+    opacity: .4;
+    margin-bottom: 25px;
+}
+
+.credit-names,
+.credit-text {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+
+    font-size: 14px;
+    line-height: 2.4;
+    letter-spacing: 2px;
+    opacity: .72;
+}
+
+.credit-title {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.special-thanks .credit-text {
+    line-height: 2.6;
+}
+
+.main-credit {
+    margin-top: 70px;
+    padding: 80px 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+
+    border-top: 1px solid rgba(255,255,255,.15);
+    border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.main-credit-name {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.director-name {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+.works-back {
+    display: inline-block;
+    margin-top: 70px;
+
+    font-size: 9px;
+    letter-spacing: 4px;
+    opacity: .5;
+
+    transition: opacity .3s ease;
+}
+
+.works-back:hover {
+    opacity: 1;
+}
+
+
+/* CREDITS MOBILE */
+
+@media (max-width: 750px) {
+
+    .credits {
+        padding: 110px 7% 90px;
+    }
+
+    .credits h2 {
+        font-size: 44px;
+        margin-bottom: 70px;
+    }
+
+    .credit-block {
+        padding: 45px 0;
+    }
+
+    .credit-names,
+    .credit-text {
+        font-size: 12px;
+        line-height: 2.4;
+        letter-spacing: 1px;
+    }
+
+    .credit-title {
+        font-size: 26px;
+    }
+
+    .main-credit {
+        grid-template-columns: 1fr;
+        gap: 55px;
+        padding: 65px 0;
+    }
+
+    .director-name {
+        font-size: 30px;
+    }
+
+}</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header>
+
+    <a href="index.html" class="logo">
+        <img src="alopex-logo.PNG" alt="ALOPEX production">
+    </a>
+
+    <a href="index.html#works" class="back-link">
+        ← BACK TO WORKS
+    </a>
+
+</header>
+
+
+<!-- =====================================
+     MOVIE HERO
+===================================== -->
+
+<section class="movie-hero">
+
+    <div class="movie-poster">
+
+        <img
+            src="otonoshizuku.JPG"
+            alt="映画 音の雫">
+
+    </div>
+
+
+    <div class="movie-hero-text">
+
+        <p class="movie-number">
+            01 / FEATURE FILM
+        </p>
+
+        <h1 class="movie-title">
+            音の雫
+        </h1>
+
+        <p class="movie-type">
+            FEATURE FILM / ALOPEX production
+        </p>
+
+        <div class="movie-line"></div>
+
+        <p class="movie-credit">
+            DIRECTED & WRITTEN BY MOTOZUMI AZUMA
+            <br>
+            MUSIC / Mei ・ pianocafe Kumi
+            <br>
+            PRODUCED BY ALOPEX production
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     STORY
+===================================== -->
+
+<section class="story">
+
+    <div class="story-inner">
+
+        <p class="section-label">
+            STORY
+        </p>
+
+        <h2>
+            17歳の夏。
+        </h2>
+
+        <div class="story-text">
+
+            「バンド、組まない？」
+            <br><br>
+
+            雨野柚音の何気ない一言から、
+            幼なじみの松木真人、親友の神崎夢香、
+            人付き合いが苦手な本多翔太、
+            どこか大人びた桂木夏織――
+            それぞれ違う想いを抱えた5人が集まった。
+
+            <br><br>
+
+            バンド名は「シトラス」。
+
+            <br><br>
+
+            楽器も、恋も、友情も、
+            何もかもがまだ不器用だった。
+
+            <br><br>
+
+            誰かを好きになること。
+            <br>
+            誰かのために強くなること。
+            <br>
+            そして、仲間と同じ音を鳴らすこと。
+
+            <br><br>
+
+            ずっと続くと思っていた、17歳の夏。
+
+            <br><br>
+
+            けれど、あの夏に鳴らした音は、
+            やがて彼らの人生に
+            消えることのない記憶を残していく。
+
+            <br><br>
+
+            これは、もう戻れない季節に置いてきた
+            “想い”と“音”をめぐる物語。
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     TRAILER
+===================================== -->
+
+<section class="trailer">
+
+    <div class="trailer-inner">
+
+        <p class="section-label">
+            OFFICIAL TRAILER
+        </p>
+
+        <h2>
+            予告編
+        </h2>
+
+        <div class="trailer-video">
+
+            <video
+                controls
+                preload="metadata"
+                playsinline>
+
+                <source
+                    src="otonoshizuku-trailer.mp4"
+                    type="video/mp4">
+
+                お使いのブラウザは動画再生に対応していません。
+
+            </video>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     CREDITS
+===================================== -->
+
+<section class="credits">
+
+    <div class="credits-inner">
+
+        <p class="section-label">CAST & CREDITS</p>
+
+        <h2>出演・スタッフ</h2>
+
+
+        <!-- CAST -->
+
+        <div class="credit-block">
+
+            <p class="credit-label">CAST</p>
+
+            <p class="credit-names">
+                森田花音<br>
+                藤縄耕平<br>
+                向ひなた<br>
+                羽瀬まゆ<br>
+                山田涼<br>
+                藤村未来<br>
+                及川規久子<br>
+                兵頭加奈<br>
+                西山こうき<br>
+                西村裕慶<br>
+                池畑佑亮<br>
+                山田岳功<br>
+                辰巳沙織
+            </p>
+
+        </div>
+
+
+        <!-- MUSIC -->
+
+        <div class="credit-block">
+
+            <p class="credit-label">THEME SONG</p>
+
+            <p class="credit-title">
+                「Rain」
+            </p>
+
+            <p class="credit-text">
+                Mei<br>
+                作詞　坂牧恵<br>
+                作曲　坂牧恵
+            </p>
+
+        </div>
+
+
+        <div class="credit-block">
+
+            <p class="credit-label">SOUND TRACK</p>
+
+            <p class="credit-title">
+                pianocafe Kumi
+            </p>
+
+        </div>
+
+
+        <!-- PRODUCTION STAFF -->
+
+        <div class="credit-block">
+
+            <p class="credit-label">PRODUCTION STAFF</p>
+
+            <p class="credit-names">
+                久保護<br>
+                千原あかり<br>
+                藤村未来<br>
+                藤縄耕平<br>
+                小谷旺生<br>
+                中多亮輔
+            </p>
+
+        </div>
+
+
+        <!-- COOPERATION -->
+
+        <div class="credit-block">
+
+            <p class="credit-label">撮影協力</p>
+
+            <p class="credit-text">
+                兵庫県立三木総合高等学校<br>
+                ALOHA CAFE PINEAPPLE 明石店<br>
+                蓮花寺<br>
+                居酒屋 五鉄<br>
+                ヒロタクリーニング<br>
+                GOLDEN EGG PROJECT WEST<br>
+                フィリピンラウンジ Lipps<br>
+                有限会社カレーラ<br>
+                イズム<br>
+                プロジェクト・コア<br>
+                キャストパワーネクスト
+            </p>
+
+        </div>
+
+
+        <!-- SPECIAL THANKS -->
+
+        <div class="credit-block special-thanks">
+
+            <p class="credit-label">SPECIAL THANKS</p>
+
+            <p class="credit-text">
+                衣巻唯明　林幸　KAORU　山本浩司<br>
+                酒多わかな　川崎久志　八田美紀　富士淳一<br>
+                千代谷京子　大川 徹　吉田優子　山野美智子<br>
+                桃田光風　蓮井真弓　山本杏莉　福岡ジョージ<br>
+                森勇太　植村夢生　和田千登世　津久間瑛依斗<br>
+                津久間志保子　千田幸子　田尻良　田中佳津代<br>
+                川﨑わか菜　つぐみ　まふゆ　仁笑<br>
+                葉山 博喜　西山のりこ　上松瑞姫　藤井幹子<br>
+                山下順子　CHACHA　MEGU　YUNA
+            </p>
+
+        </div>
+
+
+        <!-- SCHOOL CAST -->
+
+        <div class="credit-block">
+
+            <p class="credit-label">
+                兵庫県立三木総合高等学校 演劇部員
+            </p>
+
+            <p class="credit-text">
+                竹川 めい　辻 慧雅　山本 結美<br>
+                池田 葵翔　甲斐 柊弥　佐藤 大耀<br>
+                鈴木 愛子　坂下 陽夏　久次 凛<br>
+                浦川 結空　上田 琥太郎　森 くるみ<br>
+                吉村 夢叶　辻 麗奈　楠本 つむぎ
+            </p>
+
+        </div>
+
+
+        <!-- MAIN CREDIT -->
+
+        <div class="main-credit">
+
+            <div>
+                <p class="credit-label">撮影・編集</p>
+                <p class="main-credit-name">東基済</p>
+            </div>
+
+            <div>
+                <p class="credit-label">製作</p>
+                <p class="main-credit-name">ALOPEX production</p>
+            </div>
+
+            <div>
+                <p class="credit-label">監督・脚本</p>
+                <p class="director-name">東基済</p>
+            </div>
+
+        </div>
+
+
+        <a href="index.html#works" class="works-back">
+            ← BACK TO WORKS
+        </a>
+
+    </div>
+
+</section>
+
+
+</body>
+</html>

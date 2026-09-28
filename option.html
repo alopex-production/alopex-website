@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>追加オプション | ALOPEX production</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background: #080808;
+    color: #ffffff;
+
+    font-family:
+        "Helvetica Neue",
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        Arial,
+        sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+    padding: 28px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.logo img {
+    display: block;
+    width: 170px;
+    height: auto;
+}
+
+.back {
+    font-size: 9px;
+    letter-spacing: 3px;
+    opacity: .55;
+    transition: opacity .3s ease;
+}
+
+.back:hover {
+    opacity: 1;
+}
+
+
+/* HERO */
+
+.option-hero {
+    padding: 120px 8% 80px;
+}
+
+.option-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.label {
+    font-size: 10px;
+    letter-spacing: 6px;
+    opacity: .4;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: clamp(50px, 7vw, 90px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.intro {
+    max-width: 620px;
+    margin-top: 35px;
+
+    font-size: 13px;
+    line-height: 2.1;
+    letter-spacing: 1px;
+
+    opacity: .55;
+}
+
+
+/* OPTIONS */
+
+.options {
+    padding: 20px 8% 150px;
+}
+
+.options-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.option-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 60px;
+    align-items: center;
+
+    padding: 55px 0;
+
+    border-top: 1px solid rgba(255,255,255,.18);
+}
+
+.option-row:last-of-type {
+    border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+.option-en {
+    display: block;
+
+    font-size: 8px;
+    letter-spacing: 4px;
+
+    opacity: .35;
+    margin-bottom: 14px;
+}
+
+.option-name h2 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: 27px;
+    font-weight: 400;
+
+    margin-bottom: 17px;
+}
+
+.option-name p {
+    max-width: 600px;
+
+    font-size: 12px;
+    line-height: 2;
+
+    opacity: .55;
+}
+
+.option-price {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 22px;
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+
+/* NOTE */
+
+.note {
+    margin-top: 40px;
+
+    font-size: 10px;
+    line-height: 2;
+
+    opacity: .35;
+}
+
+
+/* BACK BUTTON */
+
+.return {
+    margin-top: 70px;
+}
+
+.return a {
+    display: inline-block;
+
+    padding-bottom: 9px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.4);
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    opacity: .65;
+
+    transition: opacity .3s ease;
+}
+
+.return a:hover {
+    opacity: 1;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 35px 7%;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    font-size: 8px;
+    letter-spacing: 3px;
+
+    opacity: .35;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    header {
+        padding:
+            calc(22px + env(safe-area-inset-top))
+            6%
+            22px;
+    }
+
+    .logo img {
+        width: 135px;
+    }
+
+    .back {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .option-hero {
+        padding: 90px 7% 65px;
+    }
+
+    .label {
+        font-size: 8px;
+        letter-spacing: 5px;
+    }
+
+    h1 {
+        font-size: 46px;
+    }
+
+    .intro {
+        font-size: 12px;
+    }
+
+    .options {
+        padding: 10px 7% 110px;
+    }
+
+    .option-row {
+        display: block;
+        padding: 42px 0;
+    }
+
+    .option-name h2 {
+        font-size: 24px;
+    }
+
+    .option-name p {
+        font-size: 11px;
+    }
+
+    .option-price {
+        margin-top: 28px;
+        font-size: 20px;
+    }
+
+    .note {
+        font-size: 9px;
+    }
+
+    footer {
+        display: block;
+        line-height: 2;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        <img src="alopex-logo.PNG" alt="ALOPEX production">
+    </a>
+
+    <a href="index.html#production" class="back">
+        ← BACK TO PRODUCTION
+    </a>
+
+</header>
+
+
+<main>
+
+
+<section class="option-hero">
+
+<div class="option-hero-inner">
+
+    <p class="label">
+        ADDITIONAL OPTIONS
+    </p>
+
+    <h1>
+        追加オプション
+    </h1>
+
+    <p class="intro">
+        制作内容に合わせて、
+        必要なサービスを追加いただけます。
+        ご希望の内容に応じて個別にお見積りいたします。
+    </p>
+
+</div>
+
+</section>
+
+
+<section class="options">
+
+<div class="options-inner">
+
+
+    <!-- CASTING -->
+
+    <div class="option-row">
+
+        <div class="option-name">
+
+            <span class="option-en">
+                CASTING
+            </span>
+
+            <h2>
+                キャスティング
+            </h2>
+
+            <p>
+                ALOPEX production所属俳優を中心に、
+                作品のイメージや目的に合わせた
+                キャスティングをご提案します。
+            </p>
+
+        </div>
+
+        <div class="option-price">
+            ¥30,000〜 / 1名
+        </div>
+
+    </div>
+
+
+    <!-- REVISION -->
+
+    <div class="option-row">
+
+        <div class="option-name">
+
+            <span class="option-en">
+                REVISION
+            </span>
+
+            <h2>
+                追加修正
+            </h2>
+
+            <p>
+                各制作プランには2回までの修正が含まれます。
+                3回目以降の修正については、
+                内容に応じて追加料金を頂戴します。
+            </p>
+
+        </div>
+
+        <div class="option-price">
+            ¥5,000〜 / 1回
+        </div>
+
+    </div>
+
+
+    <!-- MUSIC -->
+
+    <div class="option-row">
+
+        <div class="option-name">
+
+            <span class="option-en">
+                ORIGINAL MUSIC
+            </span>
+
+            <h2>
+                オリジナル楽曲制作
+            </h2>
+
+            <p>
+                映像の世界観やブランドイメージに合わせた
+                オリジナルBGM・楽曲を制作します。
+            </p>
+
+        </div>
+
+        <div class="option-price">
+            ¥30,000〜 / 1曲
+        </div>
+
+    </div>
+
+
+    <p class="note">
+        ※表示価格は目安です。制作内容・撮影時間・出演人数・撮影場所等により料金は変動します。<br>
+        詳細はヒアリング後にお見積りいたします。
+    </p>
+
+
+    <div class="return">
+        <a href="index.html#production">
+            ← PRODUCTION / 制作プランへ戻る
+        </a>
+    </div>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <span>
+        ALOPEX production
+    </span>
+
+    <span>
+        ACTOR MANAGEMENT / FILM / CREATIVE
+    </span>
+
+</footer>
+
+
+</body>
+</html>

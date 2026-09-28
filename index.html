@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ALOPEX production</title>
+
+<style>
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background: #080808;
+    color: #ffffff;
+    font-family:
+        "Helvetica Neue",
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        Arial,
+        sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo img {
+    display: block;
+    width: 190px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+nav a {
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: .7;
+    transition: opacity .3s ease;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: 120px 8% 100px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 70% 40%,
+            #263a73 0%,
+            #10172a 25%,
+            #080808 60%
+        );
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.85),
+            rgba(0,0,0,.15)
+        );
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 900px;
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 6px;
+    margin-bottom: 28px;
+    opacity: .65;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(55px, 9vw, 130px);
+    font-weight: 400;
+    line-height: .9;
+    letter-spacing: -3px;
+}
+
+.production {
+    display: block;
+    font-size: .28em;
+    letter-spacing: 12px;
+    margin-top: 25px;
+    opacity: .8;
+}
+
+.tagline {
+    margin-top: 45px;
+    font-size: 13px;
+    letter-spacing: 4px;
+    opacity: .65;
+}
+
+.scroll {
+    position: absolute;
+    left: 8%;
+    bottom: 35px;
+    z-index: 2;
+    font-size: 9px;
+    letter-spacing: 4px;
+    opacity: .45;
+}
+
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #080808;
+    padding: 120px 8%;
+}
+
+.about-inner {
+    width: 100%;
+    max-width: 900px;
+}
+
+.about-label {
+    font-size: 10px;
+    letter-spacing: 6px;
+    opacity: .5;
+    margin-bottom: 35px;
+}
+
+.about h2 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: clamp(48px, 7vw, 90px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+}
+
+.about-text {
+    max-width: 650px;
+    font-size: 14px;
+    line-height: 2.2;
+    letter-spacing: 1px;
+    opacity: .72;
+}
+
+.about-line {
+    width: 70px;
+    height: 1px;
+    background: #fff;
+    opacity: .4;
+    margin: 50px 0 25px;
+}
+
+.about-en {
+    font-size: 9px;
+    letter-spacing: 4px;
+    opacity: .35;
+}
+
+
+/* ========================================
+   ACTORS
+======================================== */
+
+.actors {
+    background: #080808;
+    padding: 140px 8%;
+}
+
+.actors-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.actors-label,
+.works-label,
+.production-label {
+    font-size: 10px;
+    letter-spacing: 6px;
+    opacity: .45;
+    margin-bottom: 18px;
+}
+
+.actors h2,
+.works h2,
+.production-section h2 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 400;
+    margin-bottom: 70px;
+}
+
+.actor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 28px;
+}
+
+.actor-card {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    cursor: pointer;
+}
+
+.actor-photo {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    background: #111;
+}
+
+.actor-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(20%);
+    transition: transform .7s ease, filter .7s ease;
+}
+
+.actor-card:hover .actor-photo img {
+    transform: scale(1.04);
+    filter: grayscale(0%) brightness(.7);
+}
+
+.actor-photo::after {
+    content: "VIEW PROFILE →";
+    position: absolute;
+    left: 24px;
+    bottom: 22px;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 3px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .4s ease, transform .4s ease;
+}
+
+.actor-card:hover .actor-photo::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.actor-info {
+    padding-top: 22px;
+}
+
+.actor-number {
+    font-size: 8px;
+    letter-spacing: 4px;
+    opacity: .4;
+    margin-bottom: 12px;
+}
+
+.actor-info h3 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: 27px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.actor-role {
+    font-size: 9px;
+    letter-spacing: 3px;
+    opacity: .4;
+}
+
+
+/* ========================================
+   WORKS
+======================================== */
+
+.works {
+    background: #0b0b0b;
+    padding: 140px 8% 160px;
+}
+
+.works-inner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.works-intro {
+    max-width: 620px;
+    margin-top: -40px;
+    margin-bottom: 70px;
+    font-size: 13px;
+    line-height: 2;
+    letter-spacing: 1px;
+    opacity: .55;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 75px 28px;
+}
+
+.work-card {
+    display: block;
+    width: 100%;
+}
+
+.work-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #111;
+}
+
+.work-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .7s ease, filter .7s ease;
+}
+
+.work-card:hover .work-image img {
+    transform: scale(1.035);
+    filter: brightness(.72);
+}
+
+.work-info {
+    padding-top: 20px;
+}
+
+.work-number {
+    font-size: 8px;
+    letter-spacing: 4px;
+    opacity: .4;
+    margin-bottom: 12px;
+}
+
+.work-info h3 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.work-type {
+    font-size: 8px;
+    letter-spacing: 3px;
+    opacity: .4;
+}
+
+
+/* ========================================
+   PRODUCTION
+======================================== */
+
+.production-section {
+    background: #080808;
+    padding: 150px 8% 170px;
+}
+
+.production-inner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.production-section h2 {
+    margin-bottom: 30px;
+}
+
+.production-intro {
+    max-width: 650px;
+    font-size: 13px;
+    line-height: 2.1;
+    letter-spacing: 1px;
+    opacity: .6;
+}
+
+.production-visual {
+    width: 100%;
+    margin: 70px 0 90px;
+    overflow: hidden;
+}
+
+.production-visual img {
+    display: block;
+    width: 100%;
+    height: clamp(300px, 42vw, 600px);
+    object-fit: cover;
+    object-position: center;
+}
+
+.plans-label {
+    font-size: 9px;
+    letter-spacing: 5px;
+    opacity: .45;
+    margin-bottom: 25px;
+}
+
+.plans-title {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 400;
+    margin-bottom: 55px;
+}
+
+.plan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.18);
+}
+
+.plan-card {
+    background: #080808;
+    padding: 45px 35px 50px;
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-number {
+    font-size: 8px;
+    letter-spacing: 4px;
+    opacity: .35;
+    margin-bottom: 30px;
+}
+
+.plan-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.plan-jp {
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: .45;
+    margin-bottom: 35px;
+}
+
+.plan-price {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    margin-bottom: 28px;
+}
+
+.plan-description {
+    font-size: 12px;
+    line-height: 2;
+    opacity: .55;
+    margin-bottom: 25px;
+}
+
+.plan-includes {
+    margin-top: auto;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,.12);
+    font-size: 10px;
+    line-height: 2.2;
+    letter-spacing: .5px;
+    opacity: .45;
+}
+
+.option-link-wrap {
+    margin-top: 55px;
+}
+
+.option-link {
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,.45);
+    font-size: 10px;
+    letter-spacing: 4px;
+    opacity: .75;
+    transition: opacity .3s ease;
+}
+
+.option-link:hover {
+    opacity: 1;
+}
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #080808;
+    padding: 140px 8% 70px;
+}
+
+.contact-inner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contact-label {
+    font-size: 10px;
+    letter-spacing: 6px;
+    opacity: .45;
+    margin-bottom: 35px;
+}
+
+.contact h2 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: clamp(48px, 7vw, 90px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+}
+
+.contact-text {
+    font-size: 13px;
+    line-height: 2.2;
+    letter-spacing: 1px;
+    opacity: .6;
+    margin-bottom: 60px;
+}
+
+.contact-mail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 30px 0;
+
+    border-top: 1px solid rgba(255,255,255,.25);
+    border-bottom: 1px solid rgba(255,255,255,.25);
+
+    font-size: 13px;
+    letter-spacing: 5px;
+
+    transition:
+        opacity .3s ease,
+        padding .3s ease;
+}
+
+.contact-mail span {
+    font-size: 22px;
+}
+
+.contact-mail:hover {
+    opacity: .6;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.contact-footer {
+    margin-top: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+
+    font-size: 8px;
+    line-height: 2;
+    letter-spacing: 2px;
+    opacity: .3;
+}
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 750px) {
+
+    header {
+        padding:
+            calc(22px + env(safe-area-inset-top))
+            6% 20px;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        width: 140px;
+    }
+
+    nav {
+        gap: 18px;
+        padding-top: 6px;
+    }
+
+    nav a {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    nav a:nth-child(1),
+    nav a:nth-child(3),
+    nav a:nth-child(4) {
+        display: none;
+    }
+
+    .hero {
+        min-height: 100svh;
+        padding: 130px 7% 100px;
+    }
+
+    .small-title {
+        font-size: 9px;
+        letter-spacing: 4px;
+    }
+
+    .hero h1 {
+        font-size: clamp(58px, 19vw, 82px);
+        letter-spacing: -2px;
+    }
+
+    .production {
+        font-size: .25em;
+        letter-spacing: 8px;
+    }
+
+    .tagline {
+        font-size: 10px;
+    }
+
+    .about {
+        min-height: auto;
+        padding: 110px 7%;
+    }
+
+    .about h2 {
+        font-size: 48px;
+    }
+
+    .about-text {
+        font-size: 13px;
+    }
+
+    .actors {
+        padding: 110px 6% 120px;
+    }
+
+    .actors h2,
+    .works h2 {
+        font-size: 46px;
+        margin-bottom: 55px;
+    }
+
+    .actor-grid {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .actor-card {
+        max-width: none;
+    }
+
+    .actor-photo {
+        aspect-ratio: 4 / 5;
+    }
+
+    .actor-photo img {
+        filter: none;
+    }
+
+    .actor-photo::after {
+        opacity: .85;
+        transform: none;
+    }
+
+    .works {
+        padding: 110px 6% 130px;
+    }
+
+    .works-intro {
+        margin-top: -30px;
+        font-size: 12px;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+    }
+
+    .production-section {
+        padding: 110px 6% 130px;
+    }
+
+    .production-section h2 {
+        font-size: 44px;
+    }
+
+    .production-intro {
+        font-size: 12px;
+    }
+
+    .production-visual {
+        margin: 50px 0 70px;
+    }
+
+    .production-visual img {
+        height: 260px;
+    }
+
+    .plans-title {
+        font-size: 34px;
+        margin-bottom: 40px;
+    }
+
+    .plan-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .plan-card {
+        min-height: auto;
+        padding: 38px 28px 42px;
+    }
+
+    .option-link {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+/* CONTACT MOBILE */
+
+.contact {
+    min-height: auto;
+    padding: 100px 7% 80px;
+}
+
+.contact h2 {
+    font-size: 42px;
+}
+
+.contact-mail {
+    font-size: 16px;
+    letter-spacing: 1px;
+    word-break: break-all;
+}
+
+.contact-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        <img src="alopex-logo.PNG" alt="ALOPEX production">
+    </a>
+
+    <nav>
+        <a href="#about">ABOUT</a>
+        <a href="#actors">ACTORS</a>
+        <a href="#works">WORKS</a>
+        <a href="#production">PRODUCTION</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            FILM / ACTOR MANAGEMENT / CREATIVE
+        </div>
+
+        <h1>
+            ALOPEX
+            <span class="production">PRODUCTION</span>
+        </h1>
+
+        <div class="tagline">
+            STORIES BEYOND THE FRAME.
+        </div>
+
+    </div>
+
+    <div class="scroll">
+        SCROLL TO EXPLORE
+    </div>
+
+</section>
+
+
+<section class="about" id="about">
+
+    <div class="about-inner">
+
+        <p class="about-label">WHO WE ARE</p>
+
+        <h2>
+            物語を、<br>
+            その先へ。
+        </h2>
+
+        <p class="about-text">
+            ALOPEX productionは、関西を拠点に活動する
+            俳優マネジメント・映像制作プロダクションです。
+            <br><br>
+            映画制作で培った演出力と映像表現を軸に、
+            俳優のマネジメントから映画・ドラマ・PR映像まで、
+            人と物語の魅力を映像として形にします。
+        </p>
+
+        <div class="about-line"></div>
+
+        <p class="about-en">
+            ACTOR MANAGEMENT / FILM / CREATIVE PRODUCTION
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="actors" id="actors">
+
+<div class="actors-inner">
+
+    <p class="actors-label">ACTORS</p>
+    <h2>所属俳優</h2>
+
+    <div class="actor-grid">
+
+        <a href="fujinawa.html" class="actor-card">
+            <div class="actor-photo"><img src="IMG_7752.jpg" alt="藤縄耕平"></div>
+            <div class="actor-info">
+                <p class="actor-number">01 / ACTOR</p>
+                <h3>藤縄耕平</h3>
+                <p class="actor-role">ALOPEX production</p>
+            </div>
+        </a>
+
+        <a href="fujimura.html" class="actor-card">
+            <div class="actor-photo"><img src="IMG_7800.jpg" alt="藤村未来"></div>
+            <div class="actor-info">
+                <p class="actor-number">02 / ACTOR</p>
+                <h3>藤村未来</h3>
+                <p class="actor-role">ALOPEX production</p>
+            </div>
+        </a>
+
+        <a href="takatsuki.html" class="actor-card">
+            <div class="actor-photo"><img src="IMG_7590.JPG" alt="高月そら"></div>
+            <div class="actor-info">
+                <p class="actor-number">03 / ACTOR</p>
+                <h3>高月そら</h3>
+                <p class="actor-role">ALOPEX production</p>
+            </div>
+        </a>
+
+        <a href="tsukuma.html" class="actor-card">
+            <div class="actor-photo"><img src="IMG_7806.JPG" alt="津久間瑛依斗"></div>
+            <div class="actor-info">
+                <p class="actor-number">04 / ACTOR</p>
+                <h3>津久間瑛依斗</h3>
+                <p class="actor-role">ALOPEX production</p>
+            </div>
+        </a>
+
+        <a href="sugihara.html" class="actor-card">
+            <div class="actor-photo">
+                <img src="copy_13DEF199-FC4C-49A5-842A-961EF65B8787.jpg" alt="杉原由依">
+            </div>
+            <div class="actor-info">
+                <p class="actor-number">05 / ACTOR</p>
+                <h3>杉原由依</h3>
+                <p class="actor-role">ALOPEX production</p>
+            </div>
+        </a>
+
+        <a href="hanasaki.html" class="actor-card">
+            <div class="actor-photo"><img src="IMG_2428.JPG" alt="花咲香純"></div>
+            <div class="actor-info">
+                <p class="actor-number">06 / MODEL</p>
+                <h3>花咲香純</h3>
+                <p class="actor-role">ALOPEX production</p>
+            </div>
+        </a>
+
+        <a href="koko.html" class="actor-card">
+            <div class="actor-photo"><img src="IMG_5805.JPG" alt="KOKO"></div>
+            <div class="actor-info">
+                <p class="actor-number">07 / INFLUENCER</p>
+                <h3>KOKO</h3>
+                <p class="actor-role">ALOPEX production</p>
+            </div>
+        </a>
+
+        <a href="shiraishi.html" class="actor-card">
+            <div class="actor-photo"><img src="phonto 7.PNG" alt="白石桂花"></div>
+            <div class="actor-info">
+                <p class="actor-number">08 / ACTOR</p>
+                <h3>白石桂花</h3>
+                <p class="actor-role">ALOPEX production</p>
+            </div>
+        </a>
+
+    </div>
+
+</div>
+</section>
+
+
+<section class="works" id="works">
+
+<div class="works-inner">
+
+    <p class="works-label">SELECTED WORKS</p>
+    <h2>映像作品</h2>
+
+    <p class="works-intro">
+        映画・短編映画・ドラマなど、
+        ALOPEX productionが手掛けた作品の一部をご紹介します。
+    </p>
+
+    <div class="works-grid">
+
+      <a href="otonoshizuku.html" class="work-card">
+
+    <div class="work-image">
+        <img src="otonoshizuku.JPG" alt="映画 音の雫">
+    </div>
+
+    <div class="work-info">
+        <p class="work-number">01 / FILM</p>
+        <h3>音の雫</h3>
+        <p class="work-type">FEATURE FILM</p>
+    </div>
+
+</a>
+
+        <article class="work-card">
+            <div class="work-image"><img src="hinageshi.PNG" alt="映画 ヒナゲシが咲いた場所"></div>
+            <div class="work-info">
+                <p class="work-number">02 / FILM</p>
+                <h3>ヒナゲシが咲いた場所</h3>
+                <p class="work-type">FEATURE FILM</p>
+            </div>
+        </article>
+
+        <article class="work-card">
+            <div class="work-image"><img src="hidarikamigika.jpg" alt="短編映画 右か左か。"></div>
+            <div class="work-info">
+                <p class="work-number">03 / SHORT FILM</p>
+                <h3>右か左か。</h3>
+                <p class="work-type">SHORT FILM</p>
+            </div>
+        </article>
+
+        <article class="work-card">
+            <div class="work-image"><img src="heikoukannjouriron.PNG" alt="短編映画 並行感情理論"></div>
+            <div class="work-info">
+                <p class="work-number">04 / SHORT FILM</p>
+                <h3>並行感情理論</h3>
+                <p class="work-type">SHORT FILM</p>
+            </div>
+        </article>
+
+        <article class="work-card">
+            <div class="work-image"><img src="omikudi.JPG" alt="ドラマ おみくぢ"></div>
+            <div class="work-info">
+                <p class="work-number">05 / DRAMA</p>
+                <h3>おみくぢ</h3>
+                <p class="work-type">DRAMA</p>
+            </div>
+        </article>
+
+        <article class="work-card">
+            <div class="work-image"><img src="hyuuganatsu.jpg" alt="映画 日向夏"></div>
+            <div class="work-info">
+                <p class="work-number">06 / FILM</p>
+                <h3>日向夏</h3>
+                <p class="work-type">FEATURE FILM</p>
+            </div>
+        </article>
+
+        <article class="work-card">
+            <div class="work-image"><img src="sekaizumi.JPG" alt="映画 ここが私の世界隅。"></div>
+            <div class="work-info">
+                <p class="work-number">07 / FILM</p>
+                <h3>ここが私の世界隅。</h3>
+                <p class="work-type">FEATURE FILM</p>
+            </div>
+        </article>
+
+    </div>
+
+</div>
+</section>
+
+
+<section class="production-section" id="production">
+
+<div class="production-inner">
+
+    <p class="production-label">CREATIVE PRODUCTION</p>
+
+    <h2>映像制作</h2>
+
+    <p class="production-intro">
+        映画制作で培った演出力と映像表現を活かし、
+        PR映像・企業映像・SNS動画など、
+        目的やご予算に合わせた映像制作をご提案します。
+    </p>
+
+    <div class="production-visual">
+        <img src="production-main.PNG" alt="ALOPEX production 映像制作">
+    </div>
+
+    <p class="plans-label">PRODUCTION PLAN</p>
+    <h3 class="plans-title">制作プラン</h3>
+
+    <div class="plan-grid">
+
+        <div class="plan-card">
+            <p class="plan-number">01 / LIGHT</p>
+            <h3>LIGHT</h3>
+            <p class="plan-jp">ライトプラン</p>
+            <p class="plan-price">¥50,000〜</p>
+            <p class="plan-description">
+                SNS動画や短いPR映像など、
+                コンパクトな映像制作に。
+            </p>
+            <p class="plan-includes">
+                PLANNING / SHOOTING / EDITING<br>
+                企画・撮影・編集
+            </p>
+        </div>
+
+        <div class="plan-card">
+            <p class="plan-number">02 / STANDARD</p>
+            <h3>STANDARD</h3>
+            <p class="plan-jp">スタンダードプラン</p>
+            <p class="plan-price">¥100,000〜</p>
+            <p class="plan-description">
+                企業PR・店舗紹介・サービス紹介など、
+                ストーリー性を持たせた映像制作に。
+            </p>
+            <p class="plan-includes">
+                PLANNING / SHOOTING / EDITING<br>
+                企画・撮影・編集
+            </p>
+        </div>
+
+        <div class="plan-card">
+            <p class="plan-number">03 / CINEMATIC</p>
+            <h3>CINEMATIC</h3>
+            <p class="plan-jp">シネマティックプラン</p>
+            <p class="plan-price">¥150,000〜</p>
+            <p class="plan-description">
+                映画的な演出・構成を取り入れ、
+                ブランドや企業の物語を映像として描きます。
+            </p>
+            <p class="plan-includes">
+                PLANNING / SCRIPT / SHOOTING / EDITING<br>
+                企画・脚本・撮影・編集
+            </p>
+        </div>
+
+    </div>
+
+  <div class="option-link-wrap">
+    <a href="option.html" class="option-link">
+        OPTION / 追加料金を見る →
+    </a>
+</div>
+
+</div>
+</section>
+
+
+<!-- =====================================
+     CONTACT
+===================================== -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-inner">
+
+        <p class="contact-label">
+            CONTACT
+        </p>
+
+        <h2>
+            一緒に、<br>
+            物語をつくる。
+        </h2>
+
+        <p class="contact-text">
+            映像制作のご依頼、所属俳優への出演依頼、<br>
+            その他のお問い合わせはこちらから。
+        </p>
+
+        <a
+            href="mailto:azumamotozumi0303@gmail.com"
+            class="contact-mail">
+            CONTACT US
+            <span>→</span>
+        </a>
+
+        <div class="contact-footer">
+
+            <p>
+                ALOPEX production
+            </p>
+
+            <p>
+                ACTOR MANAGEMENT / FILM / CREATIVE PRODUCTION
+            </p>
+
+            <p>
+                © ALOPEX production
+            </p>
+
+        </div>
+
+    </div>
+
+</section></body>
+</html>
