@@ -176,6 +176,58 @@ nav a:hover {
     opacity: .45;
 }
 
+/* ========================================
+   NEWS
+======================================== */
+
+.news {
+  background: #0b0b0b;
+  padding: 110px 8%;
+}
+
+.news-inner {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.news-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  opacity: .45;
+  margin-bottom: 18px;
+}
+
+.news h2 {
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin-bottom: 55px;
+}
+
+.news-list {
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 30px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.news-date {
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: .45;
+}
+
+.news-text {
+  font-size: 14px;
+  line-height: 1.9;
+  letter-spacing: 1px;
+}
 
 /* ========================================
    ABOUT
@@ -1084,8 +1136,42 @@ grid-template-columns: repeat(3, 1fr);
         height: 195px;
     }
 }
+      
+/* ===== NEWS MOBILE ===== */
+@media (max-width: 750px) {
+  .news {
+    padding: 80px 7%;
+  }
 
-</style>
+  .news-inner {
+    width: 100%;
+  }
+
+  .news-head {
+    margin-bottom: 35px;
+  }
+
+  .news-head h2 {
+    font-size: 36px;
+  }
+
+  .news-item {
+    display: block;
+    padding: 22px 0;
+  }
+
+  .news-date {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 10px;
+  }
+
+  .news-title {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+   </style>
 </head>
 
 
@@ -1203,8 +1289,33 @@ grid-template-columns: repeat(3, 1fr);
     </div>
 
 </section>
+<!-- NEWS -->
+<section class="news" id="news">
+  <div class="news-inner">
 
+    <p class="news-label">LATEST UPDATES</p>
+    <h2>NEWS</h2>
 
+    <div class="news-list">
+
+      <div class="news-item">
+        <p class="news-date">2026.09.28</p>
+        <p class="news-text">
+          ALOPEX production 公式ホームページを公開しました。
+        </p>
+      </div>
+
+      <div class="news-item">
+        <p class="news-date">2026.09.28</p>
+        <p class="news-text">
+          俳優・子役の新規所属者募集を開始しました。
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 <section class="actors" id="actors">
 
 <div class="actors-inner">
