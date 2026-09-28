@@ -853,7 +853,53 @@ grid-template-columns: repeat(3, 1fr);
     align-items: flex-start;
     gap: 20px;
 }}
+/* ===== TALENT MOVING GALLERY ===== */
 
+.talent-marquee {
+    width: 100%;
+    overflow: hidden;
+    background: #080808;
+    padding: 70px 0;
+}
+
+.talent-track {
+    display: flex;
+    width: max-content;
+    gap: 18px;
+    animation: talent-scroll 45s linear infinite;
+}
+
+.talent-track img {
+    width: 220px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@keyframes talent-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+       transform: translateX(calc(-50% - 9px));
+    }
+}
+
+@media (max-width: 750px) {
+    .talent-marquee {
+        padding: 45px 0;
+    }
+
+    .talent-track {
+        gap: 10px;
+        animation-duration: 40s;
+    }
+
+    .talent-track img {
+        width: 145px;
+        height: 195px;
+    }
+}
 </style>
 </head>
 
@@ -902,7 +948,41 @@ grid-template-columns: repeat(3, 1fr);
     </div>
 
 </section>
+<!-- TALENT MOVING GALLERY -->
+<section class="talent-marquee">
+    <div class="talent-track">
 
+        <img src="phonto 4.JPG" alt="">
+        <img src="phonto 5.JPG" alt="">
+        <img src="phonto 6.JPG" alt="">
+        <img src="phonto 7.JPG" alt="">
+        <img src="phonto 8.JPG" alt="">
+
+        <img src="Timeline 1_01_00_01_06.jpg" alt="">
+        <img src="Timeline 1_01_00_09_05.jpg" alt="">
+
+        <img src="ポトレ2_00086400.jpg" alt="">
+        <img src="ポトレ2_00086401.jpg" alt="">
+        <img src="ポトレまとめ00086402.jpg" alt="">
+        <img src="ポトレまとめ00086409.jpg" alt="">
+        <img src="ポトレまとめ00086410.jpg" alt="">
+<!-- LOOP COPY -->
+<img src="phonto 4.JPG" alt="">
+<img src="phonto 5.JPG" alt="">
+<img src="phonto 6.JPG" alt="">
+<img src="phonto 7.JPG" alt="">
+<img src="phonto 8.JPG" alt="">
+
+<img src="Timeline 1_01_00_01_06.jpg" alt="">
+<img src="Timeline 1_01_00_09_05.jpg" alt="">
+
+<img src="ポトレ2_00086400.jpg" alt="">
+<img src="ポトレ2_00086401.jpg" alt="">
+<img src="ポトレまとめ00086402.jpg" alt="">
+<img src="ポトレまとめ00086409.jpg" alt="">
+<img src="ポトレまとめ00086410.jpg" alt="">
+    </div>
+</section>
 
 <section class="about" id="about">
 
