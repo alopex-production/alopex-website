@@ -359,7 +359,47 @@ nav a:hover {
 /* ========================================
    WORKS
 ======================================== */
+/* ========================================
+   DIRECTOR / FOUNDER
+======================================== */
 
+.director-section {
+    background: #080808;
+    padding: 40px 8% 150px;
+}
+
+.director-label {
+    font-size: 10px;
+    letter-spacing: 6px;
+    opacity: .45;
+    margin-bottom: 18px;
+}
+
+.director-section > h2 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 2px;
+    margin-bottom: 55px;
+}
+
+.director-card {
+    max-width: 360px;
+}
+
+.director-card .actor-photo {
+    aspect-ratio: 4 / 5;
+}
+
+.director-card .actor-info h3 {
+    font-size: 30px;
+}
 .works {
     background: #0b0b0b;
     padding: 140px 8% 160px;
@@ -830,8 +870,24 @@ grid-template-columns: repeat(3, 1fr);
         font-size: 9px;
         letter-spacing: 3px;
     }
+.director-section {
+    padding: 20px 6% 100px;
+}
 
-/* CONTACT MOBILE */
+.director-section > h2 {
+    font-size: 36px;
+    line-height: 1.35;
+    margin-bottom: 35px;
+}
+
+.director-card {
+    max-width: 100%;
+}
+
+.director-card .actor-info h3 {
+    font-size: 22px;
+}
+   /* CONTACT MOBILE */
 
 .contact {
     min-height: auto;
@@ -1108,22 +1164,37 @@ grid-template-columns: repeat(3, 1fr);
                 <p class="actor-role">ALOPEX production</p>
             </div>
         </a>
-<a href="azuma.html" class="actor-card">
-    <div class="actor-photo">
-        <img src="IMG_8155.JPG" alt="東 基済">
-    </div>
 
-    <div class="actor-info">
-        <p class="actor-number">DIRECTOR / FOUNDER</p>
-        <h3>東 基済</h3>
-        <p class="actor-role">FILM DIRECTOR / ALOPEX production</p>
-    </div>
-</a>
     </div>
 
 </div>
 </section>
+<section class="director-section">
 
+    <p class="director-label">
+        REPRESENTATIVE / FILM DIRECTOR
+    </p>
+
+    <h2>
+        ALOPEX production 代表<br>
+        映画監督
+    </h2>
+
+    <a href="azuma.html" class="actor-card director-card">
+
+        <div class="actor-photo">
+            <img src="IMG_8155.JPG" alt="東 基済">
+        </div>
+
+        <div class="actor-info">
+            <p class="actor-number">FOUNDER / DIRECTOR</p>
+            <h3>東 基済</h3>
+            <p class="actor-role">MOTOZUMI AZUMA</p>
+        </div>
+
+    </a>
+
+</section>
 
 <section class="works" id="works">
 
