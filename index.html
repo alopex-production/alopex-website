@@ -860,39 +860,46 @@ grid-template-columns: repeat(3, 1fr);
     overflow: hidden;
     background: #080808;
     padding: 70px 0;
+    position: relative;
 }
 
 .talent-track {
     display: flex;
+    flex-wrap: nowrap;
     width: max-content;
     gap: 18px;
-    animation: talent-scroll 45s linear infinite;
+    animation: talent-scroll 40s linear infinite;
+    will-change: transform;
 }
 
 .talent-track img {
+    display: block;
     width: 220px;
     height: 300px;
     object-fit: cover;
-    flex-shrink: 0;
+    object-position: center;
+    flex: 0 0 auto;
 }
 
 @keyframes talent-scroll {
-    from {
-        transform: translateX(0);
+    0% {
+        transform: translate3d(0, 0, 0);
     }
-    to {
-       transform: translateX(calc(-50% - 9px));
+
+    100% {
+        transform: translate3d(calc(-50% - 9px), 0, 0);
     }
 }
 
 @media (max-width: 750px) {
+
     .talent-marquee {
         padding: 45px 0;
     }
 
     .talent-track {
         gap: 10px;
-        animation-duration: 40s;
+        animation-duration: 32s;
     }
 
     .talent-track img {
@@ -900,6 +907,7 @@ grid-template-columns: repeat(3, 1fr);
         height: 195px;
     }
 }
+
 </style>
 </head>
 
