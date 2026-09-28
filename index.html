@@ -405,6 +405,69 @@ nav a:hover {
 .director-card .actor-info h3 {
     font-size: 30px;
 }
+/* ========================================
+   RECRUIT BANNER
+======================================== */
+
+.recruit-banner {
+    background:
+        linear-gradient(
+            135deg,
+            #0b0b0b 0%,
+            #11182c 55%,
+            #263a73 100%
+        );
+    padding: 120px 8%;
+    border-top: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.recruit-banner-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.recruit-label {
+    font-size: 9px;
+    letter-spacing: 5px;
+    opacity: .45;
+    margin-bottom: 20px;
+}
+
+.recruit-banner h2 {
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        Georgia,
+        serif;
+
+    font-size: clamp(42px, 6vw, 78px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 28px;
+}
+
+.recruit-text {
+    max-width: 620px;
+    font-size: 13px;
+    line-height: 2;
+    opacity: .65;
+    margin-bottom: 36px;
+}
+
+.recruit-link {
+    display: inline-block;
+    padding: 16px 24px;
+    border: 1px solid rgba(255,255,255,.35);
+    font-size: 9px;
+    letter-spacing: 3px;
+    transition: .3s;
+}
+
+.recruit-link:hover {
+    background: #fff;
+    color: #080808;
+}
 .works {
     background: #0b0b0b;
     padding: 140px 8% 160px;
@@ -723,8 +786,36 @@ nav a:hover {
 ======================================== */
 
 @media (max-width: 750px) {
+/* RECRUIT MOBILE */
 
-    header {
+.recruit-banner {
+    padding: 80px 7%;
+}
+
+.recruit-banner h2 {
+    font-size: 42px;
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.recruit-label {
+    font-size: 8px;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.recruit-text {
+    font-size: 12px;
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+.recruit-link {
+    font-size: 8px;
+    letter-spacing: 2px;
+    padding: 14px 18px;
+}  
+   header {
         padding:
             calc(22px + env(safe-area-inset-top))
             6% 20px;
@@ -1226,8 +1317,33 @@ grid-template-columns: repeat(3, 1fr);
     </a>
 
 </section>
+<section class="recruit-banner">
 
-<section class="works" id="works">
+    <div class="recruit-banner-inner">
+
+        <p class="recruit-label">
+            ACTOR / CHILD ACTOR RECRUITMENT
+        </p>
+
+        <h2>
+            俳優・子役<br>
+            募集中。
+        </h2>
+
+        <p class="recruit-text">
+            映画・ドラマ・映像作品への出演を目指す
+            俳優・子役を募集しています。
+        </p>
+
+        <a href="recruit.html" class="recruit-link">
+            VIEW RECRUITMENT →
+        </a>
+
+    </div>
+
+</section>
+   
+   <section class="works" id="works">
 
 <div class="works-inner">
 
