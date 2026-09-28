@@ -393,13 +393,17 @@ nav a:hover {
     letter-spacing: 2px;
     margin-bottom: 55px;
 }
-
+      
 .director-card {
-    max-width: 360px;
+    display: block;
+    max-width: 520px;
+    padding: 28px 0;
+    border-top: 1px solid rgba(255,255,255,.12);
+    border-bottom: 1px solid rgba(255,255,255,.12);
 }
 
-.director-card .actor-photo {
-    aspect-ratio: 4 / 5;
+.director-card .actor-info {
+    padding: 0;
 }
 
 .director-card .actor-info h3 {
@@ -983,21 +987,18 @@ grid-template-columns: repeat(3, 1fr);
 }
 
 .director-card {
-    max-width: 260px;
-}
-
-.director-card .actor-photo {
-    aspect-ratio: 4 / 5;
+    max-width: 100%;
+    padding: 22px 0;
 }
 
 .director-card .actor-info {
-    padding-top: 16px;
+    padding: 0;
 }
 
 .director-card .actor-info h3 {
     font-size: 20px;
 }
-
+   
 .director-card .actor-number {
     font-size: 7px;
     letter-spacing: 3px;
@@ -1304,9 +1305,7 @@ grid-template-columns: repeat(3, 1fr);
 
     <a href="azuma.html" class="actor-card director-card">
 
-        <div class="actor-photo">
-            <img src="IMG_8155.JPG" alt="東 基済">
-        </div>
+      
 
         <div class="actor-info">
             <p class="actor-number">FOUNDER / DIRECTOR</p>
