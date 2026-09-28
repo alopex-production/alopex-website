@@ -238,6 +238,110 @@ body {
         padding: 40px 7%;
     }
 }
+    /* PROGRAM DESCRIPTION */
+
+.description p {
+    margin-bottom: 28px;
+}
+
+.description-quote {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 2px;
+    padding: 12px 0;
+}
+
+
+/* PROGRAM CONCEPT */
+
+.program-concept {
+    margin: 55px 0;
+    padding: 40px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.concept-label {
+    font-size: 8px;
+    letter-spacing: 4px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.concept-copy {
+    font-size: 21px;
+    line-height: 2;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+
+/* PROGRAM CREDITS */
+
+.program-credits {
+    margin-bottom: 55px;
+}
+
+.credit-row {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 25px;
+    padding: 17px 0;
+    border-bottom: 1px solid #222;
+}
+
+.credit-row span {
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: #666;
+}
+
+.credit-row strong {
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #aaa;
+}
+
+
+/* PROGRAM DETAIL MOBILE */
+
+@media (max-width: 750px) {
+
+    .description p {
+        margin-bottom: 25px;
+    }
+
+    .description-quote {
+        font-size: 16px;
+    }
+
+    .program-concept {
+        margin: 45px 0;
+        padding: 35px 0;
+    }
+
+    .concept-copy {
+        font-size: 18px;
+        line-height: 2;
+    }
+
+    .credit-row {
+        display: block;
+        padding: 18px 0;
+    }
+
+    .credit-row span {
+        display: block;
+        margin-bottom: 9px;
+    }
+
+    .credit-row strong {
+        display: block;
+        line-height: 1.8;
+    }
+}
 </style>
 </head>
 
@@ -287,16 +391,75 @@ body {
                 話せるコト。
             </h2>
 
-            <p class="description">
-                カメラが回っているのに、女子会は止まらない。<br><br>
+         <div class="description">
 
-                俳優×俳優だからこそ話せる、
-                仕事や恋愛、リアルな悩み。<br>
+    <p>
+        本番では“役”として。<br>
+        取材では“俳優”として。<br><br>
 
-                俳優たちの「今」に迫る
-                ALOPEX productionオリジナルトーク番組。
-            </p>
+        でも、その肩書きを少しだけ置いたとき、<br>
+        彼女たちは何を考え、何に悩み、<br>
+        どんな未来を見ているのだろう。
+    </p>
 
+    <p>
+        『イマだから話せるコト。』は、<br>
+        関西を中心に活動する女性俳優をゲストに迎え、<br>
+        仕事、将来、恋愛、お金、家族、そして夢——<br>
+        普段はなかなか表に出ないリアルな想いを語り合う、<br>
+        俳優×俳優の本音トーク番組。
+    </p>
+
+    <p>
+        同じ俳優だからこそ分かること。<br>
+        同じ世界にいるからこそ聞けること。
+    </p>
+
+    <p class="description-quote">
+        「これ、言っていいのかな……？」
+    </p>
+
+    <p>
+        そんな瞬間まで、カメラは静かに見つめます。
+    </p>
+
+</div>
+
+<div class="program-concept">
+
+    <p class="concept-label">PROGRAM CONCEPT</p>
+
+    <p class="concept-copy">
+        今だから。<br>
+        ここだから。<br>
+        相手があなただから、話せること。
+    </p>
+
+</div>
+
+<div class="program-credits">
+
+    <div class="credit-row">
+        <span>MAIN MC</span>
+        <strong>高月そら</strong>
+    </div>
+
+    <div class="credit-row">
+        <span>GUEST</span>
+        <strong>関西を中心に活動する女性俳優</strong>
+    </div>
+
+    <div class="credit-row">
+        <span>PRODUCER / DIRECTOR</span>
+        <strong>東 基済</strong>
+    </div>
+
+    <div class="credit-row">
+        <span>PRODUCTION</span>
+        <strong>ALOPEX production</strong>
+    </div>
+
+</div>
             <div class="latest">
 
                 <p class="latest-label">
