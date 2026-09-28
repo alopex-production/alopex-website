@@ -1171,6 +1171,99 @@ grid-template-columns: repeat(3, 1fr);
     line-height: 1.8;
   }
 }
+      /* ==============================
+   YOUTUBE PROGRAMS
+============================== */
+
+.youtube-programs {
+  background: #080808;
+  padding: 110px 8%;
+}
+
+.youtube-programs-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.youtube-programs-label {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: rgba(255,255,255,.45);
+  margin-bottom: 18px;
+}
+
+.youtube-programs h2 {
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0 0 25px;
+  color: #fff;
+}
+
+.youtube-programs-text {
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 45px;
+}
+
+.youtube-programs-card {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  background: #000;
+}
+
+.youtube-programs-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform .7s ease, opacity .7s ease;
+}
+
+.youtube-programs-card:hover img {
+  transform: scale(1.025);
+  opacity: .8;
+}
+
+.youtube-programs-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 5px;
+  border-bottom: 1px solid rgba(255,255,255,.25);
+
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+/* MOBILE */
+@media (max-width: 750px) {
+
+  .youtube-programs {
+    padding: 80px 7%;
+  }
+
+  .youtube-programs h2 {
+    font-size: 42px;
+  }
+
+  .youtube-programs-text {
+    font-size: 12px;
+    margin-bottom: 30px;
+  }
+
+  .youtube-programs-link {
+    padding: 18px 3px;
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+}
    </style>
 </head>
 
@@ -1323,7 +1416,33 @@ grid-template-columns: repeat(3, 1fr);
 
   </div>
 </section>
-<section class="actors" id="actors">
+   <!-- YOUTUBE PROGRAMS -->
+<section class="youtube-programs">
+
+  <div class="youtube-programs-inner">
+
+    <p class="youtube-programs-label">ALOPEX ORIGINAL CONTENTS</p>
+
+    <h2>YouTube Programs</h2>
+
+    <p class="youtube-programs-text">
+      ALOPEX productionが制作する<br>
+      オリジナルYouTubeコンテンツ。
+    </p>
+
+    <a href="youtube.html" class="youtube-programs-card">
+      <img src="youtubesamune.PNG" alt="ALOPEX YouTube Programs">
+
+      <div class="youtube-programs-link">
+        <span>VIEW PROGRAMS</span>
+        <span>→</span>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+   <section class="actors" id="actors">
 
 <div class="actors-inner">
 
