@@ -788,10 +788,10 @@ grid-template-columns: repeat(3, 1fr);
         font-size: 12px;
     }
 
-   .works-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 14px;
-}    
+  .works-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 40px 14px !important;
+}  
    .production-section {
         padding: 110px 6% 130px;
     }
