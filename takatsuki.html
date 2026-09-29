@@ -192,6 +192,70 @@ footer {
         grid-template-columns: 100px 1fr;
     }
 }
+    /* ========================================
+   PORTFOLIO
+======================================== */
+
+.portfolio {
+    padding: 100px 6%;
+    background: #080808;
+}
+
+.portfolio-header {
+    margin-bottom: 45px;
+}
+
+.portfolio-label {
+    font-size: 9px;
+    letter-spacing: 6px;
+    opacity: .45;
+    margin-bottom: 15px;
+}
+
+.portfolio h2 {
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.portfolio-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+}
+
+/* PORTFOLIO MOBILE */
+
+@media (max-width: 750px) {
+
+    .portfolio {
+        padding: 70px 6%;
+    }
+
+    .portfolio-header {
+        margin-bottom: 35px;
+    }
+
+    .portfolio h2 {
+        font-size: 32px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .portfolio-grid img {
+        aspect-ratio: 4 / 5;
+    }
+}
 </style>
 </head>
 
@@ -259,8 +323,33 @@ footer {
     </div>
 
 </main>
+<section class="portfolio">
 
-<footer>
+    <div class="portfolio-header">
+        <p class="portfolio-label">PORTFOLIO / PORTRAIT</p>
+        <h2>Portfolio</h2>
+    </div>
+
+    <div class="portfolio-grid">
+        <img src="images/talents/takatsuki/17.jpg" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/3.jpg" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/8.jpg" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/9.jpg" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/IMG_2144.jpg" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/IMG_2168.jpg" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/IMG_2563.JPG" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/IMG_5594.JPG" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/IMG_5598.jpg" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/IMG_5599.jpg" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/IMG_5603.jpg" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/IMG_5604.jpg" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/Snapshot 30-05-2026 14:14.PNG" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/phonto 11.PNG" alt="高月そら ポートレート">
+        <img src="images/talents/takatsuki/phonto 5.JPG" alt="高月そら ポートレート">
+    </div>
+
+</section>
+    <footer>
     <span>ALOPEX production</span>
     <span>ACTOR MANAGEMENT / FILM / CREATIVE</span>
 </footer>
