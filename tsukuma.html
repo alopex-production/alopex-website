@@ -192,6 +192,70 @@ footer {
         grid-template-columns: 100px 1fr;
     }
 }
+    /* ========================================
+   PORTFOLIO
+======================================== */
+
+.portfolio {
+    padding: 100px 6%;
+    background: #080808;
+}
+
+.portfolio-header {
+    margin-bottom: 45px;
+}
+
+.portfolio-label {
+    font-size: 9px;
+    letter-spacing: 6px;
+    opacity: .45;
+    margin-bottom: 15px;
+}
+
+.portfolio h2 {
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.portfolio-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+}
+
+/* PORTFOLIO MOBILE */
+
+@media (max-width: 750px) {
+
+    .portfolio {
+        padding: 70px 6%;
+    }
+
+    .portfolio-header {
+        margin-bottom: 35px;
+    }
+
+    .portfolio h2 {
+        font-size: 32px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .portfolio-grid img {
+        aspect-ratio: 4 / 5;
+    }
+}
 </style>
 </head>
 
@@ -260,8 +324,24 @@ footer {
     </div>
 
 </main>
+<section class="portfolio">
 
-<footer>
+    <div class="portfolio-header">
+        <p class="portfolio-label">PORTFOLIO / PORTRAIT</p>
+        <h2>Portfolio</h2>
+    </div>
+
+    <div class="portfolio-grid">
+        <img src="images/talents/tsukuma/IMG_5600 2.jpg" alt="津久間瑛依斗 ポートレート">
+        <img src="images/talents/tsukuma/IMG_5601.jpg" alt="津久間瑛依斗 ポートレート">
+        <img src="images/talents/tsukuma/copy_2E4038CB-1997-489A-BD6B-7CDF38B93DFB.jpg" alt="津久間瑛依斗 ポートレート">
+        <img src="images/talents/tsukuma/copy_E3443038-BF69-4046-BA8B-6B9848234054.jpg" alt="津久間瑛依斗 ポートレート">
+        <img src="images/talents/tsukuma/phonto 4.JPG" alt="津久間瑛依斗 ポートレート">
+        <img src="images/talents/tsukuma/phonto 7.PNG" alt="津久間瑛依斗 ポートレート">
+    </div>
+
+</section>
+    <footer>
     <span>ALOPEX production</span>
     <span>ACTOR MANAGEMENT / FILM / CREATIVE</span>
 </footer>
