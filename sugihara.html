@@ -173,6 +173,70 @@ footer {
         grid-template-columns: 100px 1fr;
     }
 }
+    /* ========================================
+   PORTFOLIO
+======================================== */
+
+.portfolio {
+    padding: 100px 6%;
+    background: #080808;
+}
+
+.portfolio-header {
+    margin-bottom: 45px;
+}
+
+.portfolio-label {
+    font-size: 9px;
+    letter-spacing: 6px;
+    opacity: .45;
+    margin-bottom: 15px;
+}
+
+.portfolio h2 {
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.portfolio-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+}
+
+/* PORTFOLIO MOBILE */
+
+@media (max-width: 750px) {
+
+    .portfolio {
+        padding: 70px 6%;
+    }
+
+    .portfolio-header {
+        margin-bottom: 35px;
+    }
+
+    .portfolio h2 {
+        font-size: 32px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .portfolio-grid img {
+        aspect-ratio: 4 / 5;
+    }
+}
 </style>
 </head>
 
@@ -232,8 +296,25 @@ footer {
     </div>
 
 </main>
+<section class="portfolio">
 
-<footer>
+    <div class="portfolio-header">
+        <p class="portfolio-label">PORTFOLIO / PORTRAIT</p>
+        <h2>Portfolio</h2>
+    </div>
+
+    <div class="portfolio-grid">
+        <img src="images/talents/sugihara/11.jpg" alt="杉原由依 ポートレート">
+        <img src="images/talents/sugihara/7.jpg" alt="杉原由依 ポートレート">
+        <img src="images/talents/sugihara/IMG_5595.JPG" alt="杉原由依 ポートレート">
+        <img src="images/talents/sugihara/IMG_5602 2.jpg" alt="杉原由依 ポートレート">
+        <img src="images/talents/sugihara/copy_61060129-CD7F-42CA-893A-4A0FEBF9FFF6.jpg" alt="杉原由依 ポートレート">
+        <img src="images/talents/sugihara/copy_B10B9EE8-3F72-4CE2-BD76-0726687DA4C7.JPEG" alt="杉原由依 ポートレート">
+        <img src="images/talents/sugihara/phonto 8.JPG" alt="杉原由依 ポートレート">
+    </div>
+
+</section>
+    <footer>
     <span>ALOPEX production</span>
     <span>ACTOR MANAGEMENT / FILM / CREATIVE</span>
 </footer>
