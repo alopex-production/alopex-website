@@ -192,6 +192,56 @@ footer {
         grid-template-columns: 100px 1fr;
     }
 }
+    /* PORTFOLIO */
+.portfolio {
+    padding: 100px 6%;
+    background: #080808;
+}
+
+.portfolio-header {
+    margin-bottom: 45px;
+}
+
+.portfolio-label {
+    font-size: 9px;
+    letter-spacing: 6px;
+    opacity: .45;
+    margin-bottom: 15px;
+}
+
+.portfolio h2 {
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.portfolio-grid img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 750px) {
+    .portfolio {
+        padding: 70px 6%;
+    }
+
+    .portfolio h2 {
+        font-size: 28px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+}
 </style>
 </head>
 
@@ -260,8 +310,24 @@ footer {
     </div>
 
 </main>
+<section class="portfolio">
 
-<footer>
+    <div class="portfolio-header">
+        <p class="portfolio-label">PORTFOLIO / PORTRAIT</p>
+        <h2>Portfolio</h2>
+    </div>
+
+    <div class="portfolio-grid">
+        <img src="images/talents/fujimura/14.jpg" alt="藤村未来 ポートレート">
+        <img src="images/talents/fujimura/3.jpg" alt="藤村未来 ポートレート">
+        <img src="images/talents/fujimura/4.jpg" alt="藤村未来 ポートレート">
+        <img src="images/talents/fujimura/IMG_2146.JPG" alt="藤村未来 ポートレート">
+        <img src="images/talents/fujimura/IMG_2562.JPG" alt="藤村未来 ポートレート">
+        <img src="images/talents/fujimura/IMG_5876.JPG" alt="藤村未来 ポートレート">
+    </div>
+
+</section>
+    <footer>
     <span>ALOPEX production</span>
     <span>ACTOR MANAGEMENT / FILM / CREATIVE</span>
 </footer>
