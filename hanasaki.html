@@ -183,6 +183,70 @@ footer {
         grid-template-columns: 100px 1fr;
     }
 }
+    /* ========================================
+   PORTFOLIO
+======================================== */
+
+.portfolio {
+    padding: 100px 6%;
+    background: #080808;
+}
+
+.portfolio-header {
+    margin-bottom: 45px;
+}
+
+.portfolio-label {
+    font-size: 9px;
+    letter-spacing: 6px;
+    opacity: .45;
+    margin-bottom: 15px;
+}
+
+.portfolio h2 {
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.portfolio-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+}
+
+/* PORTFOLIO MOBILE */
+
+@media (max-width: 750px) {
+
+    .portfolio {
+        padding: 70px 6%;
+    }
+
+    .portfolio-header {
+        margin-bottom: 35px;
+    }
+
+    .portfolio h2 {
+        font-size: 32px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .portfolio-grid img {
+        aspect-ratio: 4 / 5;
+    }
+}
 </style>
 </head>
 
@@ -247,8 +311,32 @@ footer {
     </div>
 
 </main>
+<section class="portfolio">
 
-<footer>
+    <div class="portfolio-header">
+        <p class="portfolio-label">PORTFOLIO / PORTRAIT</p>
+        <h2>Portfolio</h2>
+    </div>
+
+    <div class="portfolio-grid">
+        <img src="images/talents/hanasaki/12.jpg" alt="花咲香純 ポートレート">
+        <img src="images/talents/hanasaki/16.jpg" alt="花咲香純 ポートレート">
+        <img src="images/talents/hanasaki/18.jpg" alt="花咲香純 ポートレート">
+        <img src="images/talents/hanasaki/2.jpg" alt="花咲香純 ポートレート">
+        <img src="images/talents/hanasaki/6.jpg" alt="花咲香純 ポートレート">
+
+        <img src="images/talents/hanasaki/IMG_2425.jpg" alt="花咲香純 ポートレート">
+        <img src="images/talents/hanasaki/IMG_2426.JPG" alt="花咲香純 ポートレート">
+        <img src="images/talents/hanasaki/IMG_2427.JPG" alt="花咲香純 ポートレート">
+        <img src="images/talents/hanasaki/IMG_2429.JPG" alt="花咲香純 ポートレート">
+        <img src="images/talents/hanasaki/IMG_2431.JPG" alt="花咲香純 ポートレート">
+        <img src="images/talents/hanasaki/IMG_2432.JPG" alt="花咲香純 ポートレート">
+        <img src="images/talents/hanasaki/IMG_2433.JPG" alt="花咲香純 ポートレート">
+        <img src="images/talents/hanasaki/IMG_2434.JPG" alt="花咲香純 ポートレート">
+    </div>
+
+</section>
+    <footer>
     <span>ALOPEX production</span>
     <span>ACTOR MANAGEMENT / FILM / CREATIVE</span>
 </footer>
