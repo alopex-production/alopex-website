@@ -1281,6 +1281,133 @@ grid-template-columns: repeat(3, 1fr);
   object-position: center 35%;
   transform: scale(1.35);
 }
+      /* =========================================
+   MOBILE FIXED HEADER / HAMBURGER MENU
+========================================= */
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 750px) {
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 88px;
+    padding:
+      calc(14px + env(safe-area-inset-top))
+      6% 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5, 5, 8, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 9999;
+  }
+
+  .logo {
+    position: relative;
+    z-index: 10001;
+  }
+
+  .logo img {
+    width: 135px;
+    height: auto;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 8px;
+    margin: 0;
+
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+
+    position: relative;
+    z-index: 10001;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: #fff;
+    transition: transform 0.35s ease,
+                opacity 0.25s ease;
+  }
+
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    padding: 130px 8% 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 28px;
+
+    background: rgba(5, 5, 8, 0.98);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+      opacity 0.35s ease,
+      visibility 0.35s ease;
+
+    z-index: 10000;
+  }
+
+  header nav a,
+  header nav a:nth-child(1),
+  header nav a:nth-child(3),
+  header nav a:nth-child(4) {
+    display: block;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: #fff;
+    opacity: 0.85;
+  }
+
+  header.menu-open nav {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  header.menu-open .menu-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  header.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  header.menu-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+}
    </style>
 </head>
 
@@ -1290,17 +1417,23 @@ grid-template-columns: repeat(3, 1fr);
 
 <header>
 
-    <a href="index.html" class="logo">
-        <img src="alopex-logo.PNG" alt="ALOPEX production">
-    </a>
+  <a href="index.html" class="logo">
+    <img src="alopex-logo.PNG" alt="ALOPEX production">
+  </a>
 
-    <nav>
-        <a href="#about">ABOUT</a>
-        <a href="#actors">ACTORS</a>
-        <a href="#works">WORKS</a>
-        <a href="#production">PRODUCTION</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
+  <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav>
+    <a href="#about">ABOUT</a>
+    <a href="#actors">ACTORS</a>
+    <a href="#works">WORKS</a>
+    <a href="#production">PRODUCTION</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
 
 </header>
 
@@ -1859,5 +1992,32 @@ grid-template-columns: repeat(3, 1fr);
 
     </div>
 
-</section></body>
+</section>
+<script>
+  const header = document.querySelector('header');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuLinks = document.querySelectorAll('header nav a');
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = header.classList.toggle('menu-open');
+
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    menuToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'メニューを閉じる' : 'メニューを開く'
+    );
+
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      header.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'メニューを開く');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+</body>
 </html>
