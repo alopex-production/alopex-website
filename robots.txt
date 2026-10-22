@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alopex-website.pages.dev/sitemap.xml
