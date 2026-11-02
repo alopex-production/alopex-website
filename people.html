@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src 'none'; script-src 'sha256-uuBVfNMBBzh579iw8Xa9oMpzbgQjow57QApE8rLKKys='; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'" http-equiv="Content-Security-Policy">
+<meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src 'none'; script-src 'sha256-cXvInBoM48Bh6y8rnviOl00znRXlVOMXFGevMBRJgiI='; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'" http-equiv="Content-Security-Policy">
 <meta content="no-referrer" name="referrer">
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -913,7 +913,7 @@ WEBサイトを作る前に、その人の思いをちゃんと知ること。�
   'use strict';
   document.querySelectorAll('img[data-photo-source]').forEach(image => {
     const link = document.querySelector('article.person a[href="#' + image.dataset.photoSource + '"]');
-    const original = link && link.querySelector('img.person-image');
+    const original = link && link.querySelector('img');
     if (original) image.src = original.getAttribute('src');
   });
   const $all = selector => Array.from(document.querySelectorAll(selector));
