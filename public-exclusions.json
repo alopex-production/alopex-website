@@ -1,0 +1,10 @@
+{
+  "reason": "SEO-001 representative decision: pause unverified film details and materials; originals retained in Git/source backup",
+  "paths": [
+    "hinageshi.PNG",
+    "otonoshizuku.JPG",
+    "cinema/assets/hinageshi.webp",
+    "cinema/assets/oto-no-shizuku.webp",
+    "posters/featured-2.jpg"
+  ]
+}

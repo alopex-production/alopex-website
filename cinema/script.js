@@ -6,10 +6,10 @@ function render(filter='all'){
  const card=document.createElement(film.detail?'a':'button');card.className='film-card reveal';
  if(film.detail){card.href=film.slug+'.html';}else{card.type='button';card.setAttribute('aria-label',film.title+'のポスターを見る');}
  const art=document.createElement('div');art.className='film-art poster-art';
- const img=document.createElement('img');img.src='assets/'+film.slug+'.webp';img.alt='映画『'+film.title+'』ポスター';img.loading=i<4?'eager':'lazy';img.decoding='async';art.appendChild(img);
- const over=document.createElement('span');over.className='poster-overlay';over.textContent=film.detail?'EXPLORE FILM  ↗':'VIEW POSTER  ↗';art.appendChild(over);
+ const img=document.createElement('img');img.src=film.detail?'../assets/film-basic-'+film.slug+'.svg':'assets/'+film.slug+'.webp';img.alt='映画『'+film.title+'』'+(film.detail?'基本情報':'ポスター');img.loading=i<4?'eager':'lazy';img.decoding='async';art.appendChild(img);
+ const over=document.createElement('span');over.className='poster-overlay';over.textContent=film.detail?'BASIC INFORMATION  ↗':'VIEW POSTER  ↗';art.appendChild(over);
  const info=document.createElement('div');info.className='film-info';
- const text=document.createElement('div');const h=document.createElement('h3');h.textContent=film.title;const p=document.createElement('p');p.textContent=film.detail?'FILM DETAIL ↗':'DETAILS IN PREPARATION';text.append(h,p);const more=document.createElement('span');more.className='more';more.textContent='↗';info.append(text,more);card.append(art,info);
+ const text=document.createElement('div');const h=document.createElement('h3');h.textContent=film.title;const p=document.createElement('p');p.textContent=film.detail?'作品基本情報 ↗':'DETAILS IN PREPARATION';text.append(h,p);const more=document.createElement('span');more.className='more';more.textContent='↗';info.append(text,more);card.append(art,info);
  if(!film.detail)card.addEventListener('click',()=>{
  document.getElementById('dialogTitle').textContent=film.title;
  const container=document.getElementById('dialogArt');container.replaceChildren();
