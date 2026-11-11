@@ -1,10 +1,8 @@
 {
-  "reason": "SEO-001 representative decision: pause unverified film details and materials; originals retained in Git/source backup",
+  "reason": "SEO-001: retain exclusions for unapproved originals and duplicates; D02 approved only the two cinema poster webp derivatives on 2026-11-12.",
   "paths": [
     "hinageshi.PNG",
     "otonoshizuku.JPG",
-    "cinema/assets/hinageshi.webp",
-    "cinema/assets/oto-no-shizuku.webp",
     "posters/featured-2.jpg"
   ]
 }
