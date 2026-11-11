@@ -12,7 +12,7 @@ const excluded=new Set(JSON.parse(fs.readFileSync(path.join(root,'public-exclusi
 const digest=p=>createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 const excludedHashes=new Set([...excluded].map(n=>digest(path.join(root,n))));
 const files=execFileSync('git',['ls-files','-z'],{cwd:root,encoding:'utf8'}).split('\0').filter(Boolean);
-const allowed=new Set(['.html','.css','.js','.svg','.png','.jpg','.jpeg','.webp','.gif','.ico','.woff','.woff2','.xml']);
+const allowed=new Set(['.html','.css','.js','.svg','.png','.jpg','.jpeg','.webp','.gif','.ico','.woff','.woff2','.ttf','.xml']);
 fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});
 let copied=0;
 for(const name of files){
