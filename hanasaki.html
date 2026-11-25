@@ -124,7 +124,11 @@ footer { border-top: 1px solid #3a3937; color: #c0b9aa; }
 
 @media (max-width: 750px) {
     .profile, .cards { grid-template-columns: minmax(0, 1fr); }
-    .profile-photo { width: min(100%, 440px); margin-inline: auto; }
+    .profile { gap: 24px; padding-block: 24px 40px; }
+    .profile-photo {
+        width: min(100%, 440px, 28svh);
+        margin-inline: auto;
+    }
 }
 </style>
 </head>
