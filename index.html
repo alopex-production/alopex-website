@@ -568,6 +568,14 @@ body:has(.alopex-artist-sheet:target){overflow:hidden}
 <script>
 (()=>{
 'use strict';
+// Send saved links to Hanasaki's former inline profile to the current profile.
+function redirectLegacyHanasakiProfile() {
+  if (window.location.hash === '#alopex-artist-06') {
+    window.location.replace('/hanasaki');
+  }
+}
+redirectLegacyHanasakiProfile();
+window.addEventListener('hashchange', redirectLegacyHanasakiProfile);
 // Mobile menu and talent profiles use native hash links without requiring JavaScript.
 const modal=document.querySelector('#infoDialog');const close=modal.querySelector('.modal-close');const title=document.querySelector('#modalTitle'),body=document.querySelector('#modalBody'),eye=document.querySelector('#modalEyebrow');
 function openDialog(t,b,e){title.textContent=t;body.textContent=b;eye.textContent=e||'ALOPEX / INFORMATION';if(typeof modal.showModal==='function'){modal.showModal()}else{alert(t+'\n'+b)}}
